@@ -2,7 +2,7 @@ import os
 
 from manim import *
 
-from lectures.constants import MANIM_COMMAND
+from lectures.constants import ANIM_COMMAND
 
 
 class GradientDescent(Scene):
@@ -59,4 +59,4 @@ class GradientDescent(Scene):
 
 
 if __name__ == '__main__':
-    os.system(f"{MANIM_COMMAND} {__file__} GradientDescent")
+    os.system(f"{ANIM_COMMAND} {__file__} GradientDescent")

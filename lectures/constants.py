@@ -1,1 +1,2 @@
-MANIM_COMMAND = "manim -pqh"
+PICTURE_COMMAND = "manim -pqh"
+ANIM_COMMAND = "manim -pqh --format=gif"

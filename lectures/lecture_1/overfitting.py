@@ -4,7 +4,7 @@ from manim import *
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 
-from lectures.constants import MANIM_COMMAND
+from lectures.constants import PICTURE_COMMAND
 
 
 def get_axes_and_labels():
@@ -79,4 +79,4 @@ class Overfitting(Scene):
 
 
 if __name__ == '__main__':
-    os.system(f"{MANIM_COMMAND} {__file__} Overfitting")
+    os.system(f"{PICTURE_COMMAND} {__file__} Overfitting")
