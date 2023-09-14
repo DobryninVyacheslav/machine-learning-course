@@ -4,7 +4,7 @@ from manim import *
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 
-from lectures.constants import PICTURE_COMMAND
+from lessons.constants import PICTURE_COMMAND
 
 
 def get_axes_and_labels():

@@ -2,7 +2,7 @@ import os
 
 from manim import *
 
-from lectures.constants import ANIM_COMMAND
+from lessons.constants import ANIM_COMMAND
 
 
 class GradientDescent(Scene):
