@@ -13,6 +13,10 @@ def get_circle(point):
     return circle
 
 
+def get_arrow(start, end):
+    return Arrow(start, end, stroke_width=2)
+
+
 class HNSW(ThreeDScene):
     def construct(self):
         resolution_fa = 1
@@ -113,12 +117,12 @@ class HNSW(ThreeDScene):
             DashedLine(p2_l1.get_center(), p2_l0.get_center()),
             DashedLine(p1_l1.get_center(), p1_l0.get_center()),
         )
-        self.play(Create(Arrow(e_p_l2.get_center(), p2_l2.get_center(), stroke_width=2)))
-        self.play(Create(Arrow(p2_l2.get_center(), p5_l1.get_center())))
-        self.play(Create(Arrow(p5_l1.get_center(), p6_l1.get_center())))
-        self.play(Create(Arrow(p6_l1.get_center(), p3_l1.get_center())))
-        self.play(Create(Arrow(p3_l1.get_center(), p3_l0.get_center())))
-        self.play(Create(Arrow(p3_l0.get_center(), p8_l0.get_center())))
+        self.play(Create(get_arrow(e_p_l2.get_center(), p2_l2.get_center())))
+        self.play(Create(get_arrow(p2_l2.get_center(), p5_l1.get_center())))
+        self.play(Create(get_arrow(p5_l1.get_center(), p6_l1.get_center())))
+        self.play(Create(get_arrow(p6_l1.get_center(), p3_l1.get_center())))
+        self.play(Create(get_arrow(p3_l1.get_center(), p3_l0.get_center())))
+        self.play(Create(get_arrow(p3_l0.get_center(), p8_l0.get_center())))
 
 
 if __name__ == '__main__':
