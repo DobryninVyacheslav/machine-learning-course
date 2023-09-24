@@ -17,6 +17,15 @@ def get_arrow(start, end):
     return Arrow(start, end, stroke_width=2)
 
 
+def get_layer_sign(text, next_to):
+    text = Text(text=text, color=BLACK).scale(0.5)
+    text.rotate(PI / 2, axis=LEFT)
+    text.rotate(PI, axis=UP)
+    text.next_to(next_to, DOWN)
+    text.set_z(next_to.get_z() + 0.1)
+    return text
+
+
 class HNSW(ThreeDScene):
     def construct(self):
         resolution_fa = 1
@@ -56,6 +65,7 @@ class HNSW(ThreeDScene):
         e_p_l2 = get_circle(axes.c2p(2, 4.5, 1))
         p2_l2 = get_circle(axes.c2p(2.1, 2, 1))
         group_2 = VGroup(
+            get_layer_sign("Слой 2 (входной)", layer_2),
             layer_2,
             e_p_l2,
             p2_l2,
@@ -67,6 +77,7 @@ class HNSW(ThreeDScene):
         p5_l1 = get_circle(axes.c2p(2.1, 2, 0.5))
         p6_l1 = get_circle(axes.c2p(3.4, 2.5, 0.5))
         group_1 = VGroup(
+            get_layer_sign("Слой 1", layer_1),
             layer_1,
             Line(p1_l1.get_center(), p2_l1.get_center(), color=GRAY),
             Line(p1_l1.get_center(), p3_l1.get_center(), color=GRAY),
@@ -90,6 +101,7 @@ class HNSW(ThreeDScene):
         p8_l0 = get_circle(axes.c2p(2.8, 3, -0.25))
         p9_l0 = get_circle(axes.c2p(3.5, 3.2, -0.25))
         group_0 = VGroup(
+            get_layer_sign("Слой 0", layer_0),
             layer_0,
             Line(p1_l0.get_center(), p4_l0.get_center(), color=GRAY),
             Line(p2_l0.get_center(), p4_l0.get_center(), color=GRAY),
