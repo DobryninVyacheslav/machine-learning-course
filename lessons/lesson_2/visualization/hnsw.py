@@ -64,7 +64,7 @@ class HNSW(ThreeDScene):
         # self.add(axes)
         entry_point_text = Text(text="Входная точка", color=BLACK).scale(0.5)
         self.add_fixed_in_frame_mobjects(entry_point_text)
-        entry_point_text.to_corner(UP * 0.7 + RIGHT * 2)
+        entry_point_text.to_corner(UP * 0.3 + RIGHT * 0.5)
 
         e_p_l2 = get_circle(axes.c2p(2, 4.5, 1), color=RED_C)
         p2_l2 = get_circle(axes.c2p(2.1, 2, 1))
