@@ -71,6 +71,7 @@ class HNSW(ThreeDScene):
         group_2 = VGroup(
             get_layer_sign("Слой 2 (входной)", layer_2),
             layer_2,
+            get_line(e_p_l2.get_center(), p2_l2.get_center()),
             e_p_l2,
             p2_l2,
         )
@@ -88,6 +89,8 @@ class HNSW(ThreeDScene):
             get_line(p2_l1.get_center(), p3_l1.get_center()),
             get_line(p3_l1.get_center(), p4_l1.get_center()),
             get_line(p4_l1.get_center(), p5_l1.get_center()),
+            get_line(p5_l1.get_center(), p6_l1.get_center()),
+            get_line(p6_l1.get_center(), p3_l1.get_center()),
             p1_l1,
             p2_l1,
             p3_l1,
@@ -110,6 +113,7 @@ class HNSW(ThreeDScene):
             get_line(p1_l0.get_center(), p4_l0.get_center()),
             get_line(p2_l0.get_center(), p4_l0.get_center()),
             get_line(p3_l0.get_center(), p4_l0.get_center()),
+            get_line(p3_l0.get_center(), p8_l0.get_center()),
             get_line(p4_l0.get_center(), p5_l0.get_center()),
             get_line(p4_l0.get_center(), p8_l0.get_center()),
             get_line(p5_l0.get_center(), p8_l0.get_center()),
