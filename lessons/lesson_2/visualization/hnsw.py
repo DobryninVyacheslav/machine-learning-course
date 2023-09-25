@@ -106,7 +106,6 @@ class HNSW(ThreeDScene):
         p6_l0 = get_circle(axes.c2p(2.1, 2, -0.25))
         p7_l0 = get_circle(axes.c2p(3.4, 2.5, -0.25))
         p8_l0 = get_circle(axes.c2p(2.8, 3, -0.25))
-        p9_l0 = get_circle(axes.c2p(3.5, 3.2, -0.25))
         group_0 = VGroup(
             get_layer_sign("Слой 0", layer_0),
             layer_0,
@@ -127,7 +126,6 @@ class HNSW(ThreeDScene):
             p6_l0,
             p7_l0,
             p8_l0,
-            p9_l0,
         )
         self.add(
             group_2,
