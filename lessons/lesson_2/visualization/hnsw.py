@@ -5,8 +5,8 @@ from manim import *
 from lessons.constants import PICTURE_COMMAND
 
 
-def get_circle(point):
-    circle = Circle(radius=0.3, color=DARK_BLUE, fill_opacity=1, stroke_color=BLACK, stroke_width=2)
+def get_circle(point, color=DARK_BLUE):
+    circle = Circle(radius=0.3, color=color, fill_opacity=1, stroke_color=BLACK, stroke_width=2)
     circle.set_x(point[0])
     circle.set_y(point[1])
     circle.set_z(point[2])
@@ -66,7 +66,7 @@ class HNSW(ThreeDScene):
         self.add_fixed_in_frame_mobjects(entry_point_text)
         entry_point_text.to_corner(UP * 0.7 + RIGHT * 2)
 
-        e_p_l2 = get_circle(axes.c2p(2, 4.5, 1))
+        e_p_l2 = get_circle(axes.c2p(2, 4.5, 1), color=RED_C)
         p2_l2 = get_circle(axes.c2p(2.1, 2, 1))
         group_2 = VGroup(
             get_layer_sign("Слой 2 (входной)", layer_2),
@@ -105,7 +105,7 @@ class HNSW(ThreeDScene):
         p5_l0 = get_circle(axes.c2p(1.8, 2.8, -0.25))
         p6_l0 = get_circle(axes.c2p(2.1, 2, -0.25))
         p7_l0 = get_circle(axes.c2p(3.4, 2.5, -0.25))
-        p8_l0 = get_circle(axes.c2p(2.8, 3, -0.25))
+        p8_l0 = get_circle(axes.c2p(2.8, 3, -0.25), color=GREEN)
         group_0 = VGroup(
             get_layer_sign("Слой 0", layer_0),
             layer_0,
