@@ -26,6 +26,10 @@ def get_layer_sign(text, next_to):
     return text
 
 
+def get_line(start, end):
+    return Line(start, end, color=GRAY)
+
+
 class HNSW(ThreeDScene):
     def construct(self):
         resolution_fa = 1
@@ -79,11 +83,11 @@ class HNSW(ThreeDScene):
         group_1 = VGroup(
             get_layer_sign("Слой 1", layer_1),
             layer_1,
-            Line(p1_l1.get_center(), p2_l1.get_center(), color=GRAY),
-            Line(p1_l1.get_center(), p3_l1.get_center(), color=GRAY),
-            Line(p2_l1.get_center(), p3_l1.get_center(), color=GRAY),
-            Line(p3_l1.get_center(), p4_l1.get_center(), color=GRAY),
-            Line(p4_l1.get_center(), p5_l1.get_center(), color=GRAY),
+            get_line(p1_l1.get_center(), p2_l1.get_center()),
+            get_line(p1_l1.get_center(), p3_l1.get_center()),
+            get_line(p2_l1.get_center(), p3_l1.get_center()),
+            get_line(p3_l1.get_center(), p4_l1.get_center()),
+            get_line(p4_l1.get_center(), p5_l1.get_center()),
             p1_l1,
             p2_l1,
             p3_l1,
@@ -103,14 +107,14 @@ class HNSW(ThreeDScene):
         group_0 = VGroup(
             get_layer_sign("Слой 0", layer_0),
             layer_0,
-            Line(p1_l0.get_center(), p4_l0.get_center(), color=GRAY),
-            Line(p2_l0.get_center(), p4_l0.get_center(), color=GRAY),
-            Line(p3_l0.get_center(), p4_l0.get_center(), color=GRAY),
-            Line(p4_l0.get_center(), p5_l0.get_center(), color=GRAY),
-            Line(p4_l0.get_center(), p8_l0.get_center(), color=GRAY),
-            Line(p5_l0.get_center(), p8_l0.get_center(), color=GRAY),
-            Line(p6_l0.get_center(), p8_l0.get_center(), color=GRAY),
-            Line(p7_l0.get_center(), p8_l0.get_center(), color=GRAY),
+            get_line(p1_l0.get_center(), p4_l0.get_center()),
+            get_line(p2_l0.get_center(), p4_l0.get_center()),
+            get_line(p3_l0.get_center(), p4_l0.get_center()),
+            get_line(p4_l0.get_center(), p5_l0.get_center()),
+            get_line(p4_l0.get_center(), p8_l0.get_center()),
+            get_line(p5_l0.get_center(), p8_l0.get_center()),
+            get_line(p6_l0.get_center(), p8_l0.get_center()),
+            get_line(p7_l0.get_center(), p8_l0.get_center()),
             p1_l0,
             p2_l0,
             p3_l0,
