@@ -14,7 +14,14 @@ def get_circle(point, color=DARK_BLUE):
 
 
 def get_arrow(start, end):
-    return Arrow(start, end, stroke_width=2, color=RED_C)
+    return Arrow(
+        start,
+        end,
+        tip_length=0.45,
+        max_tip_length_to_length_ratio=1,
+        stroke_width=5,
+        color=RED_C,
+    )
 
 
 def get_layer_sign(text, next_to):
