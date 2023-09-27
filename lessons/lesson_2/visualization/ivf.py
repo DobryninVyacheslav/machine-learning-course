@@ -1,5 +1,4 @@
 import os
-from random import uniform
 from manim import *
 from manim import Dot, ORANGE
 from itertools import chain
@@ -12,8 +11,10 @@ def get_arrow(start, end, color=ORANGE):
         start,
         end,
         color=color,
-        stroke_width=3,
-        max_stroke_width_to_length_ratio=1,
+        stroke_width=0,
+        background_stroke_color=color,
+        background_stroke_width=5,
+        background_stroke_opacity=1,
         max_tip_length_to_length_ratio=1,
     )
 
@@ -74,12 +75,6 @@ def get_dividing_lines(ax):
     ]
 
 
-def get_query_dot_and_search_path(ax):
-    return [
-        Dot(ax.c2p(5, 4), radius=0.2, color=ORANGE),
-    ]
-
-
 class IVF(Scene):
     def construct(self):
         ax = Axes(
@@ -109,6 +104,7 @@ class IVF(Scene):
             self.play(ShowCreationThenFadeOut(get_arrow(query_dot.get_center(), dot.get_center())))
 
         self.play(Create(get_arrow(query_dot.get_center(), dots_by_cluster_map[2][-1].get_center(), color=GREEN)))
+        self.play(FadeToColor(dots_by_cluster_map[2][-1], color=GREEN, run_time=1))
         self.wait(3)
 
 
