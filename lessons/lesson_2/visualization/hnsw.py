@@ -151,6 +151,7 @@ class HNSW(ThreeDScene):
         self.play(Create(get_arrow(p6_l1.get_center(), p3_l1.get_center())))
         self.play(Create(get_arrow(p3_l1.get_center(), p3_l0.get_center())))
         self.play(Create(get_arrow(p3_l0.get_center(), p8_l0.get_center())))
+        self.wait(3)
 
 
 if __name__ == '__main__':
