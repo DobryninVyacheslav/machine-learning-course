@@ -86,10 +86,13 @@ class IVF(Scene):
         )
 
         query_dot = Dot(ax.c2p(7, 1), radius=0.2, color=ORANGE)
+        text = Text("Вектор запроса", font_size=18, color=BLACK)
+        text.next_to(query_dot, DOWN)
         centroids = get_centroids(ax)
         dots_by_cluster_map = get_dots_by_cluster_map(ax)
 
         self.add(
+            text,
             *chain.from_iterable(dots_by_cluster_map.values()),
             *centroids,
             *get_dividing_lines(ax),
