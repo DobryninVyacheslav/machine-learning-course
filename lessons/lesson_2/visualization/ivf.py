@@ -86,25 +86,29 @@ class IVF(Scene):
         )
 
         query_dot = Dot(ax.c2p(7, 1), radius=0.2, color=ORANGE)
-        text = Text("Вектор запроса", font_size=18, color=BLACK)
-        text.next_to(query_dot, DOWN)
+        query_dot_text = Text("Вектор запроса", font_size=18, color=BLACK)
+        query_dot_text.next_to(query_dot, DOWN)
         centroids = get_centroids(ax)
         dots_by_cluster_map = get_dots_by_cluster_map(ax)
 
         self.add(
-            text,
+            query_dot_text,
             *chain.from_iterable(dots_by_cluster_map.values()),
             *centroids,
             *get_dividing_lines(ax),
             query_dot,
         )
         for centroid in centroids[:-1]:
-            self.play(ShowCreationThenFadeOut(get_arrow(query_dot.get_center(), centroid.get_center())))
+            arrow = get_arrow(query_dot.get_center(), centroid.get_center())
+            self.play(Create(arrow))
+            self.play(FadeOut(arrow))
 
         self.play(Create(get_arrow(query_dot.get_center(), centroids[-1].get_center(), color=BLUE_A)))
 
         for dot in dots_by_cluster_map[2][:-1]:
-            self.play(ShowCreationThenFadeOut(get_arrow(query_dot.get_center(), dot.get_center())))
+            arrow = get_arrow(query_dot.get_center(), dot.get_center())
+            self.play(Create(arrow))
+            self.play(FadeOut(arrow))
 
         self.play(Create(get_arrow(query_dot.get_center(), dots_by_cluster_map[2][-1].get_center(), color=GREEN)))
         self.play(FadeToColor(dots_by_cluster_map[2][-1], color=GREEN, run_time=1))
